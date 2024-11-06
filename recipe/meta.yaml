@@ -1,25 +1,22 @@
 {% set name = "javaobj-py3" %}
-{% set version = "0.3.0" %}
-{% set file_ext = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash_value = "a57469e4f0d0eeba7482ad9839595db6e99ca4ac6630a4c8064dda75a2182549" %}
+{% set version = "0.4.2" %}
 
 package:
-  name: '{{ name|lower }}'
-  version: '{{ version }}'
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  fn: '{{ name }}-{{ version }}.{{ file_ext }}'
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ file_ext }}
-  '{{ hash_type }}': '{{ hash_value }}'
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: ed3b1ffcfd39f165729cb53587cca02ab0bfa4c332c837a92d5ffe6aef5c8010
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
   noarch: python
 
 requirements:
-  build:
+  host:
     - python
     - pip
   run:
@@ -32,6 +29,7 @@ test:
 about:
   home: https://github.com/tcalmant/python-javaobj
   license: Apache Software
+  license_file: LICENSE
   license_family: APACHE
   summary: Module for serializing and de-serializing Java objects.
   description: |
