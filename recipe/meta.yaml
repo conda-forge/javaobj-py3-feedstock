@@ -1,8 +1,8 @@
 {% set name = "javaobj-py3" %}
-{% set version = "0.3.0" %}
+{% set version = "0.4.0.1" %}
 {% set file_ext = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "a57469e4f0d0eeba7482ad9839595db6e99ca4ac6630a4c8064dda75a2182549" %}
+{% set hash_value = "18c44cfaa214813784a823432b4ab9829c9626b2b00072011627b4008b0067cd" %}
 
 package:
   name: '{{ name|lower }}'
@@ -32,6 +32,7 @@ test:
 about:
   home: https://github.com/tcalmant/python-javaobj
   license: Apache Software
+  license_file: LICENSE
   license_family: APACHE
   summary: Module for serializing and de-serializing Java objects.
   description: |
